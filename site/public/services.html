@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>บริการติดตั้งและดูแลระบบ | FEEL’S Smart Home &amp; Security</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#8582ff",
+                    "error-dim": "#a70138",
+                    "on-primary-container": "#14007e",
+                    "background": "#f5f6f7",
+                    "surface-container-high": "#e0e3e4",
+                    "primary": "#4a40e0",
+                    "on-primary-fixed-variant": "#1a0099",
+                    "on-surface-variant": "#595c5d",
+                    "surface": "#f5f6f7",
+                    "surface-dim": "#d1d5d7",
+                    "tertiary-fixed-dim": "#ef6eff",
+                    "on-primary": "#f4f1ff",
+                    "secondary-dim": "#005a52",
+                    "on-error-container": "#510017",
+                    "error-container": "#f74b6d",
+                    "tertiary-fixed": "#f487ff",
+                    "on-surface": "#2c2f30",
+                    "primary-fixed": "#9795ff",
+                    "secondary-fixed": "#89f5e7",
+                    "inverse-on-surface": "#9b9d9e",
+                    "on-primary-fixed": "#000000",
+                    "on-secondary-container": "#005c54",
+                    "on-secondary-fixed": "#004841",
+                    "surface-bright": "#f5f6f7",
+                    "surface-variant": "#dadddf",
+                    "surface-container-low": "#eff1f2",
+                    "tertiary-dim": "#8a009e",
+                    "secondary": "#00675e",
+                    "tertiary": "#9e00b4",
+                    "surface-container": "#e6e8ea",
+                    "outline-variant": "#abadae",
+                    "primary-fixed-dim": "#8885ff",
+                    "error": "#b41340",
+                    "on-tertiary-fixed-variant": "#660075",
+                    "on-secondary": "#bffff5",
+                    "secondary-container": "#89f5e7",
+                    "surface-tint": "#4a40e0",
+                    "on-tertiary": "#ffeefb",
+                    "secondary-fixed-dim": "#7ae7d8",
+                    "tertiary-container": "#f487ff",
+                    "outline": "#757778",
+                    "on-secondary-fixed-variant": "#00675e",
+                    "on-tertiary-container": "#580065",
+                    "inverse-surface": "#0c0f10",
+                    "on-tertiary-fixed": "#300038",
+                    "surface-container-highest": "#dadddf",
+                    "primary-container": "#9795ff",
+                    "on-background": "#2c2f30",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffefef",
+                    "primary-dim": "#3d30d4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f5f6f7; }
+        .mesh-gradient-bg {
+            background: radial-gradient(at 0% 0%, rgba(74, 64, 224, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(158, 0, 180, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 50% 0%, rgba(0, 103, 94, 0.05) 0px, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-[#f5f6f7]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+<nav class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-semibold tracking-tighter text-[#2c2f30] dark:text-white flex items-center gap-2">
+<img alt="Logo" class="h-8 w-auto" data-alt="minimalist professional logo for FEEL'S smart home security brand using geometric indigo shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWS_N54wNSmnJ8gjkYK68mGm4IdTjzFj7IGm1q5WWyUaDiu5ul4mTnMkitAV11f74kuEbz-opmvtaBr9RJh5459EtjH6LkxBCMkwPhU1ppAJ3sJchPYdPnGlIUD4bszfYCfleFe-mbDdmh4j8XR7pXprewwG2lfoxM6Yj_vumjFPKJu_aJRlEGMBzTd-PaBzHTCb5lLbpNVfvkAC9MkpuUbosKONVkOsF_XMGjZ8d_TaL2Xfe8AaEv35qziIxQwGDf9kvFoRlgdWs"/>
+<span>FEEL’S</span>
+</div>
+<div class="hidden md:flex gap-10 font-manrope text-sm font-medium tracking-tight">
+<a class="text-[#2c2f30]/60 dark:text-white/60 hover:text-[#4a40e0] transition-colors" href="#">Home</a>
+<a class="text-[#4a40e0] dark:text-[#6366f1] font-bold border-b-2 border-[#4a40e0] pb-1" href="#">Process</a>
+<a class="text-[#2c2f30]/60 dark:text-white/60 hover:text-[#4a40e0] transition-colors" href="#">Support</a>
+<a class="text-[#2c2f30]/60 dark:text-white/60 hover:text-[#4a40e0] transition-colors" href="#">Design</a>
+<a class="text-[#2c2f30]/60 dark:text-white/60 hover:text-[#4a40e0] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-medium text-[#2c2f30]/60 hover:opacity-80 transition-all duration-300 active:scale-95">Login</button>
+<button class="bg-[#4a40e0] text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-tight hover:opacity-90 transition-all duration-300 scale-100 active:scale-95 shadow-lg shadow-primary/20">Get Started</button>
+</div>
+</nav>
+</header>
+<main class="mesh-gradient-bg min-h-screen">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 px-8 overflow-hidden">
+<div class="max-w-[1440px] mx-auto flex flex-col items-center text-center">
+<span class="inline-block px-4 py-1.5 mb-6 text-[0.6875rem] font-bold tracking-[0.1em] text-primary bg-primary/10 rounded-full uppercase">Professional Installation</span>
+<h1 class="text-[3.5rem] md:text-[5rem] font-semibold tracking-[-0.03em] leading-[1.1] text-on-surface mb-8 max-w-4xl">
+                    บริการที่รังสรรค์เพื่อความสมบูรณ์แบบของบ้านคุณ
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-12">
+                    เปลี่ยนบ้านธรรมดาให้เป็น Digital Sanctuary ที่เงียบสงบและปลอดภัย ด้วยทีมงานผู้เชี่ยวชาญที่ใส่ใจทุกรายละเอียดของการออกแบบและติดตั้ง
+                </p>
+<!-- Hero Visual - Large Glass Card -->
+<div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden shadow-2xl group">
+<img alt="Premium Smart Home Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury modern living room with integrated smart home lighting systems in soft evening blue and amber tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrQRHrnzQFzkIOEXZBxyshmlTqr-d0Texho2bPCxvqeMsNun6GhPaDJFWNkVvxMaPNMUXOOLUniJsQn3exhiwx_HuunOKjOXY3EDqyysR8VdRQkjMVVaZFp6rhkzrSzpxqEsgQPxzj7ZeHWgHgntwQ3r4-dXbBcDIJ6jnX8qfPkzMKYgdHn68ZJ5xGdUaybA8C7vB-sX65eN-IfnI3v7pscJTeqHQAqZYHsZBz4CDPRTjTkikadU4QTxDP_b7ICZQl6As__wIkbWY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-12 left-12 right-12 glass-panel p-8 rounded-lg flex items-center justify-between border border-white/20">
+<div class="text-left">
+<p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">CRAFTING EXCELLENCE</p>
+<h3 class="text-2xl font-medium text-on-surface">นิยามใหม่ของความสะดวกสบาย</h3>
+</div>
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-lowest overflow-hidden bg-primary-container">
+<img alt="User" data-alt="portrait of a happy professional technician smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEr3PpQNF39_ds5FP60Qx4B7hF3RhGy1NbeME36-VUwLl7LnC0KkVVmCeswgQ7xEXoDgHkW1ngxvH9HLkvSs5G3wpQRcBmiDzsn1hBpD8YP1VVVwh09c509IVAjtuMMHLQ4-W0eXK0x3o4ZuNvH6ZAfqSX1i3ZP3J8NwiP2Nr3aWlJsHHgXwUl8g51trdlymMfX2_EWnoblqRUvDP9qLfe-s6120rEBal1ViPCWHAvhP9c3pfkNsAjQkwD-A2cfJa1FlfQQmD_vYM"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-lowest overflow-hidden bg-secondary-container">
+<img alt="User" data-alt="portrait of a confident female interior designer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsJrFLKiBdbMoNG4RqVJcgb5SoFGn7Tx4y3Tiir1cMyByx6ATPWF1a82qmy31z4ZyuJhfK3_GC_9kRkqYVKYsTBMvSoSWa_DUgLWKvAN-t8aBgoFvyzAzNnD7cgVHMOJiN9G6MkW6J5dulW_Cmt3fNhuEjrOhKEfWF8r6WKUI1QuOJzHnIuFfZgzgJ4MvYWi_JXuiR5HU_2ir5VguNE2F5_ZK_zjKx-4VgpEovcLgg4KKko4Ot0J3yLBHfrevZWp9dyiiW-nfjQuY"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface-container-lowest bg-primary-fixed-dim flex items-center justify-center text-white text-xs font-bold">
+                                +15
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Installation Process (Bento Grid) -->
+<section class="py-24 px-8 bg-surface-container-low/50">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-16">
+<h2 class="text-[2.75rem] font-semibold tracking-tight text-on-surface mb-4">กระบวนการที่แม่นยำ</h2>
+<p class="text-on-surface-variant max-w-xl">สามขั้นตอนสู่ความสมบูรณ์แบบที่ตอบโจทย์ไลฟ์สไตล์เฉพาะตัวของคุณ</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
+<!-- Step 1: Wide Card -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest p-12 transition-all hover:shadow-xl hover:shadow-primary/5">
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-lg bg-primary/5 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-3xl font-medium mb-4 text-on-surface">ขั้นตอนที่ 1: การสำรวจและออกแบบ</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed text-lg mb-8">
+                                ทีมวิศวกรของเราจะเข้าสำรวจพื้นที่จริงเพื่อประเมินความต้องการและพฤติกรรมการใช้งาน ออกแบบระบบที่กลมกลืนไปกับงานสถาปัตยกรรมเดิมของคุณ
+                            </p>
+<div class="flex gap-4">
+<span class="px-4 py-2 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">LIFESTYLE MAPPING</span>
+<span class="px-4 py-2 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">SITE AUDIT</span>
+</div>
+</div>
+<img alt="Architectural Planning" class="absolute right-0 bottom-0 w-1/2 h-full object-cover opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700" data-alt="blueprint and architectural tools on a desk with warm natural lighting and smart home schematics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAEFDQB_r_kQNWeapKcuz0thBzdvhPAvRJ4F8J2hOMVjTGLd6yxDoh9lAz2Hq3RXciMiW-R4b9GGeIGLLNvb1HHWAHu8fhP9K-i4GMC8g1PTlYY2N6Vrkpr54dk9a0OWixlmmPW1nGL9kF3a4PdUqqtMDgUTdE1qLcLkuOC5w646kmjkmoU8_CPaPQMMskjflGELP4wcOyuTz9s91l4v-afXJN2AsnOUa7t-Mslv37JHHXekzs8cyhQl_l0YtlmaAcCwVBe0KwwcA"/>
+</div>
+<!-- Step 2: Tall Card -->
+<div class="md:col-span-4 group overflow-hidden rounded-xl bg-primary text-on-primary p-12 transition-all hover:scale-[1.02]">
+<div class="h-full flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 rounded-lg bg-white/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="settings_suggest">settings_suggest</span>
+</div>
+<h3 class="text-3xl font-medium mb-4">ขั้นตอนที่ 2: การติดตั้งระดับมืออาชีพ</h3>
+<p class="text-primary-container/80 leading-relaxed">
+                                    การเดินระบบด้วยความพิถีพิถัน ไร้รอยต่อ และสะอาดตา เพื่อความคงทนและปลอดภัยสูงสุดในระยะยาว
+                                </p>
+</div>
+<div class="mt-12 bg-white/10 rounded-lg p-6 backdrop-blur-md">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed text-xl" data-icon="verified">verified</span>
+<span class="text-xs font-bold tracking-widest uppercase">CERTIFIED EXPERTS</span>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Square Card -->
+<div class="md:col-span-4 rounded-xl bg-secondary-container/30 p-12 flex flex-col justify-center">
+<div class="w-16 h-16 rounded-lg bg-secondary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="tune">tune</span>
+</div>
+<h3 class="text-2xl font-medium mb-4 text-on-secondary-container">ขั้นตอนที่ 3: การตั้งค่าและปรับจูน</h3>
+<p class="text-on-secondary-container/70 leading-relaxed mb-6">
+                            ปรับเทียบอุปกรณ์ทุกชิ้นให้ทำงานสอดประสานกันอย่างไร้รอยต่อ พร้อมสอนการใช้งานเบื้องต้นให้คุณควบคุมทุกอย่างได้ในพริบตา
+                        </p>
+</div>
+<!-- Feature Card -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-highest/30 p-12">
+<div class="flex flex-col md:flex-row gap-12 items-center h-full">
+<div class="flex-1">
+<h3 class="text-2xl font-medium mb-4 text-on-surface">Seamless Integration</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                    ระบบของเราถูกตั้งค่าให้รองรับการเชื่อมต่อกับอุปกรณ์ที่คุณมีอยู่แล้ว ไม่ว่าจะเป็นเครื่องเสียงระดับไฮเอนด์ หรือระบบเครื่องปรับอากาศอัจฉริยะ
+                                </p>
+</div>
+<div class="flex-1 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="nest_thermostat">nest_thermostat</span>
+<p class="text-xs font-bold">CLIMATE</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="speaker">speaker</span>
+<p class="text-xs font-bold">AUDIO</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="light_group">light_group</span>
+<p class="text-xs font-bold">LIGHTING</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-error mb-2" data-icon="security">security</span>
+<p class="text-xs font-bold">SHIELD</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Section -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-24 items-center">
+<div class="w-full lg:w-1/2">
+<span class="text-primary font-bold tracking-[0.2em] text-[0.6875rem] uppercase mb-6 block">ALWAYS CONNECTED</span>
+<h2 class="text-[2.75rem] md:text-[3.5rem] font-semibold tracking-tight text-on-surface mb-8 leading-[1.1]">การดูแลที่คุณวางใจได้เสมอ</h2>
+<p class="text-lg text-on-surface-variant mb-12 leading-relaxed">
+                            เพราะความปลอดภัยและสะดวกสบายไม่มีวันหยุด ทีมสนับสนุนด้านเทคนิคของเราพร้อมให้บริการช่วยเหลือแบบเรียลไทม์ และบริการตรวจเช็คสุขภาพระบบเป็นระยะ เพื่อให้คุณมั่นใจว่า Sanctuary ของคุณจะทำงานได้อย่างสมบูรณ์แบบตลอดเวลา
+                        </p>
+<div class="space-y-8">
+<div class="flex items-start gap-6 p-6 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary p-3 bg-primary/5 rounded-full" data-icon="support_agent">support_agent</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Technical Support 24/7</h4>
+<p class="text-sm text-on-surface-variant">ทีมผู้เชี่ยวชาญพร้อมตอบคำถามและแก้ไขปัญหาผ่านระบบทางไกลได้ทันที</p>
+</div>
+</div>
+<div class="flex items-start gap-6 p-6 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary p-3 bg-secondary/5 rounded-full" data-icon="health_and_safety">health_and_safety</span>
+<div>
+<h4 class="font-bold text-on-surface mb-1">Proactive Health Check</h4>
+<p class="text-sm text-on-surface-variant">การตรวจสอบระบบเชิงรุกเพื่อป้องกันปัญหาที่อาจเกิดขึ้นก่อนที่คุณจะสังเกตเห็น</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 relative">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-tertiary/10 rounded-xl blur-3xl opacity-50"></div>
+<div class="relative glass-panel rounded-xl overflow-hidden shadow-2xl p-4">
+<img alt="Technical Support" class="w-full rounded-lg" data-alt="female engineer using a tablet to monitor smart home security systems in a high-tech control room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzhG7wU-e6HBFHry8ZojysdsAAFT7qQ1xdm5dJK8v87UFlPGSqs1Ux23vm_2zie15SRTiK2DohxjGx_BERyOdavDLem1ZlzTDeQwf5k9-EOIwpfeIdaR6mp2Ga5mMdBisjabZg3gOVU33yQFRceiwZSi9X3a_cOrBlfGm7SQ68TM1wpiQ27WeuM3oatjYmic9vWFiLtacKpklsVSRjna5XcSL_3Fd8RojMNVLONVwE-jTChT0J8IbLL66YmC18Dc044cS-cTXbXsA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DIY Section -->
+<section class="py-24 px-8">
+<div class="max-w-[1440px] mx-auto">
+<div class="rounded-xl bg-inverse-surface text-on-primary-fixed p-12 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/5 to-transparent"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-[2.5rem] font-semibold tracking-tight text-white mb-6">สำหรับลูกค้าที่ต้องการติดตั้งด้วยตนเอง</h2>
+<p class="text-white/60 text-lg mb-10 leading-relaxed">
+                            เราจัดเตรียมแพ็กเกจพรีเมียมพร้อมคู่มือการติดตั้งที่เข้าใจง่ายและละเอียดที่สุด พร้อมทีมที่ปรึกษาออนไลน์ที่คอยช่วยเหลือทุกย่างก้าวของการสร้างสรรค์พื้นที่ของคุณ
+                        </p>
+<div class="flex flex-wrap gap-6">
+<button class="flex items-center gap-3 bg-white text-on-surface px-8 py-4 rounded-full font-bold hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+                                ดาวน์โหลดคู่มือ
+                            </button>
+<button class="flex items-center gap-3 border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                                เลือกซื้ออุปกรณ์
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8 text-center relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="max-w-[1440px] mx-auto relative z-10">
+<h2 class="text-[3rem] md:text-[4rem] font-semibold tracking-tighter text-on-surface mb-8">เริ่มต้นสร้าง Digital Sanctuary ของคุณวันนี้</h2>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-16">
+                    ร่วมเป็นส่วนหนึ่งของวิถีชีวิตใหม่ที่เต็มไปด้วยความปลอดภัยและความสงบสุข ให้ FEEL'S ดูแลบ้านที่คุณรัก
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<button class="bg-[#4a40e0] text-white px-12 py-5 rounded-full text-lg font-bold tracking-tight hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-2xl shadow-primary/40 active:scale-95">
+                        ติดต่อนัดหมายรับบริการ
+                    </button>
+<button class="px-12 py-5 rounded-full text-lg font-bold text-on-surface hover:bg-surface-container transition-colors active:scale-95">
+                        สอบถามข้อมูลเพิ่มเติม
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-24 bg-[#ffffff] dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-[#2c2f30] dark:text-white mb-4">FEEL’S Smart Home</div>
+<p class="font-manrope text-xs leading-relaxed text-[#2c2f30]/50 dark:text-white/40 max-w-[240px]">
+                    ยกระดับมาตรฐานความปลอดภัยด้วยเทคโนโลยีที่สอดผสานกับวิถีชีวิตอย่างลงตัว
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-8 md:mb-0">
+<a class="font-manrope text-xs leading-relaxed text-[#2c2f30]/40 dark:text-white/30 hover:text-[#4a40e0] dark:hover:text-[#6366f1] transition-colors" href="#">Privacy Policy</a>
+<a class="font-manrope text-xs leading-relaxed text-[#2c2f30]/40 dark:text-white/30 hover:text-[#4a40e0] dark:hover:text-[#6366f1] transition-colors" href="#">Terms of Service</a>
+<a class="font-manrope text-xs leading-relaxed text-[#2c2f30]/40 dark:text-white/30 hover:text-[#4a40e0] dark:hover:text-[#6366f1] transition-colors" href="#">Licensing</a>
+<a class="font-manrope text-xs leading-relaxed text-[#2c2f30]/40 dark:text-white/30 hover:text-[#4a40e0] dark:hover:text-[#6366f1] transition-colors" href="#">Global Support</a>
+</div>
+<div class="text-right">
+<p class="font-manrope text-xs leading-relaxed text-[#2c2f30]/50 dark:text-white/40">© 2024 FEEL’S Smart Home. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

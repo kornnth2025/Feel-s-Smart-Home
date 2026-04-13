@@ -1,0 +1,15 @@
+# Stitch metadata
+.stitch/
+
+# Assets
+# assets/ # Keeping assets usually
+
+# Submodules or separate repos
+stitch-skills/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log

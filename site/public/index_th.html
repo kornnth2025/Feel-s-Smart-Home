@@ -1,0 +1,519 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FEEL’S | The Digital Sanctuary Smart Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-dim": "#005a52",
+                        "on-tertiary-fixed": "#300038",
+                        "on-primary-fixed": "#000000",
+                        "outline": "#757778",
+                        "on-error-container": "#510017",
+                        "on-tertiary-fixed-variant": "#660075",
+                        "surface-container-highest": "#dadddf",
+                        "inverse-primary": "#8582ff",
+                        "inverse-surface": "#0c0f10",
+                        "primary-fixed-dim": "#8885ff",
+                        "on-tertiary": "#ffeefb",
+                        "surface-container-low": "#eff1f2",
+                        "on-secondary-container": "#005c54",
+                        "primary-dim": "#3d30d4",
+                        "on-background": "#2c2f30",
+                        "primary-container": "#9795ff",
+                        "surface-tint": "#4a40e0",
+                        "on-secondary-fixed-variant": "#00675e",
+                        "secondary": "#00675e",
+                        "surface": "#f5f6f7",
+                        "secondary-fixed-dim": "#7ae7d8",
+                        "surface-dim": "#d1d5d7",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-tertiary-container": "#580065",
+                        "primary-fixed": "#9795ff",
+                        "on-primary-fixed-variant": "#1a0099",
+                        "on-primary-container": "#14007e",
+                        "primary": "#4a40e0",
+                        "tertiary": "#9e00b4",
+                        "on-error": "#ffefef",
+                        "error": "#b41340",
+                        "on-surface-variant": "#595c5d",
+                        "error-container": "#f74b6d",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary": "#bffff5",
+                        "tertiary-fixed": "#f487ff",
+                        "tertiary-fixed-dim": "#ef6eff",
+                        "surface-container-high": "#e0e3e4",
+                        "on-primary": "#f4f1ff",
+                        "background": "#f5f6f7",
+                        "outline-variant": "#abadae",
+                        "error-dim": "#a70138",
+                        "surface-container": "#e6e8ea",
+                        "surface-variant": "#dadddf",
+                        "tertiary-dim": "#8a009e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#004841",
+                        "tertiary-container": "#f487ff",
+                        "surface-bright": "#f5f6f7",
+                        "on-surface": "#2c2f30",
+                        "secondary-container": "#89f5e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f5f6f7; color: #2c2f30; }
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, rgba(74, 64, 224, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(158, 0, 180, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 100% 0%, rgba(0, 103, 94, 0.05) 0px, transparent 50%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: scale(1.02);
+            background-color: #ffffff;
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Header -->
+<header class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-2xl font-manrope tracking-tight leading-relaxed">
+<div class="max-w-[1440px] mx-auto px-12 py-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="FEEL'S Logo" class="h-14 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhuceRqesBVCTcfN5nFxq5zt0AAuVOLe3cLVd4UnOL_qFYEwujeKtnd_sMDsOUuwI3pK6LKghOTiDmIy1C_AWSrR0UnzW1xzjJZ5UF5GSIR_kbLLHGSSB_g8JoU1RdJGCtKo11hw77aFUfPiIkdgqIg2URE8hMA6wgQDVPPY0IxKpgvmT2osfJlDnLaPaY_ZSIZv10NiOGJGU9crVS_-9E5m8zXFfJiE5NnLsLFKw1LWHI4CSh5CEc6WLICbMlrB3vfKpjJrNgTfQ" style="">
+<span class="text-2xl font-black text-slate-900 tracking-tighter font-manrope" style="">FEEL'S</span>
+</div>
+<nav class="hidden md:flex gap-10 items-center"><a class="text-indigo-600 font-bold border-b-2 border-indigo-600" href="#" style="">Home</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#" style="">Services</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#" style="">Products</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#" style="">Portfolio</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#" style=""><br></a></nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-slate-600 cursor-pointer hover:scale-110 transition-transform" style="">notifications</span>
+<span class="material-symbols-outlined text-slate-600 cursor-pointer hover:scale-110 transition-transform" style="">settings</span>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-indigo-200" style="">Contact</button>
+</div>
+</div>
+</header>
+<main class="mesh-gradient overflow-hidden">
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto px-12 pt-20 pb-32 grid lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<span class="text-label text-primary font-bold tracking-[0.2em] uppercase" style="">Premium Smart Living</span>
+<h1 class="text-6xl md:text-7xl font-bold leading-[1.1] tracking-tight" style="">Experience The <span class="text-primary" style="">Best Feeling</span> In Your Home</h1>
+<p class="text-lg text-on-surface-variant max-w-md leading-relaxed" style="">นิยามใหม่ของการอยู่อาศัย ด้วยเทคโนโลยีที่ตอบโจทย์ทุกจังหวะชีวิตในพื้นที่ส่วนตัวของคุณ</p>
+<div class="flex gap-4 pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-bold hover:shadow-2xl transition-all" style="">Explore Products</button>
+<button class="bg-surface-container-highest px-10 py-5 rounded-xl font-bold hover:bg-surface-container-high transition-all" style="">View Portfolio</button>
+</div>
+</div>
+<!-- Bento Dashboard Mockup -->
+<div class="relative grid grid-cols-6 grid-rows-6 gap-4 h-[600px]">
+<div class="col-span-4 row-span-4 rounded-xl overflow-hidden shadow-2xl relative group">
+<img class="w-full h-full object-cover" data-alt="ultra-modern living room with soft ambient purple lighting, high-end furniture, and a sleek integrated smart control panel on the wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmg7_pgF8-Xdk_mhESLXkRt1KRfujGd7kttz0g7ZAjpeYXMHg7QIgvVCASpG_Xwyua6Uro6HK59S_Oh62ew3sJ5zjbVQzD1VFqi9wyctohausDn6M7Q-PUiN0-Z13-OQ3duFmpyK1KZz4GhxHFBv5pcKv6nWwQXD2c8SPb2nbppkj_dPePLHKyTafdiaL2GAlhoM1PH-K9jz7CLrBRGoMaI9y_hI_e8misJLBP8jwAKJWcTtRR9EfAUYEVhWIJ14U7dH-0o8wZGEA" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<div class="text-xs font-bold uppercase tracking-widest opacity-80 mb-1" style="">Current Scene</div>
+<div class="text-2xl font-bold" style="">Evening Relaxation</div>
+</div>
+</div>
+<div class="col-span-2 row-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary text-4xl" style="">energy_savings_leaf</span>
+<div>
+<div class="text-3xl font-bold" style="">22.5°C</div>
+<div class="text-xs text-on-surface-variant font-bold uppercase" style="">Optimal Temp</div>
+</div>
+</div>
+<div class="col-span-2 row-span-2 bg-primary p-6 rounded-xl shadow-xl flex flex-col justify-between text-on-primary">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="">shield_with_heart</span>
+<div class="font-bold" style="">Security Active</div>
+</div>
+<div class="col-span-3 row-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-xl flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" style="">lightbulb</span>
+</div>
+<div>
+<div class="font-bold" style="">Smart Lighting</div>
+<div class="text-sm text-on-surface-variant" style="">68% Intensity</div>
+</div>
+</div>
+<div class="col-span-3 row-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-xl flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container" style="">music_note</span>
+</div>
+<div>
+<div class="font-bold" style="">AirPlay Multiroom</div>
+<div class="text-sm text-on-surface-variant" style="">Playing: Chill Mix</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Values -->
+<section class="bg-surface-container-low py-32 rounded-t-xl">
+<div class="max-w-4xl mx-auto text-center px-6">
+<h2 class="text-4xl md:text-5xl font-bold mb-10" style="">The Digital Sanctuary</h2>
+<p class="text-2xl font-light text-on-surface-variant leading-relaxed" style="">"นิยามใหม่ของบ้านที่หรูหราและเรียบง่าย คือการให้เทคโนโลยีดูแลคุณอย่างแนบเนียน เพื่อรักษาความสงบสุขในพื้นที่ส่วนตัวให้ดีที่สุด</p>
+</div>
+</section>
+<!-- Services -->
+<section class="max-w-[1440px] mx-auto px-12 py-32">
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bento-card bg-surface-container-lowest p-12 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" style="">architecture</span>
+<h3 class="text-2xl font-bold mb-4" style="">Design</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">บริการออกแบบและให้คำปรึกษาที่ปรับเปลี่ยนได้ตามความต้องการ เพื่อผสานเทคโนโลยีอัจฉริยะเข้ากับสไตล์สถาปัตยกรรมและความชอบของคุณได้อย่างลงตัว</p>
+</div>
+<div class="bento-card bg-surface-container-lowest p-12 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8" style="">construction</span>
+<h3 class="text-2xl font-bold mb-4" style="">Installation</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">บริการติดตั้งที่ใส่ใจทุกรายละเอียด เพื่อให้ทุกอุปกรณ์ทำงานได้ตรงตามความต้องการของคุณอย่างแม่นยำ</p>
+</div>
+<div class="bento-card bg-surface-container-lowest p-12 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary text-5xl mb-8" style="">package_2</span>
+<h3 class="text-2xl font-bold mb-4" style="">Self-Installation</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">อุปกรณ์ Smart home พรีเมียมสำหรับติดตั้งเอง พร้อมคู่มือการตั้งค่าที่ง่ายและบริการซัพพอร์ตออนไลน์ที่ช่วยคุณได้ทันที</p>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="max-w-[1440px] mx-auto px-12 py-32">
+<div class="mb-16">
+<h2 class="text-4xl font-bold" style="">Intelligent Ecosystem</h2>
+<div class="h-1 w-20 bg-primary mt-4"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- Smart Lighting -->
+<div class="group bg-surface-container-lowest aspect-square rounded-xl p-8 flex flex-col items-center justify-center text-center bento-card border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-primary transition-colors" style="">wb_iridescent</span>
+<div class="font-bold text-sm uppercase tracking-wider" style="">Smart Lighting</div>
+</div>
+<!-- Smart Security -->
+<div class="group bg-surface-container-lowest aspect-square rounded-xl p-8 flex flex-col items-center justify-center text-center bento-card border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-primary transition-colors" style="">vitals</span>
+<div class="font-bold text-sm uppercase tracking-wider" style="">Smart Security</div>
+</div>
+<!-- Smart Speaker -->
+<div class="group bg-surface-container-lowest aspect-square rounded-xl p-8 flex flex-col items-center justify-center text-center bento-card border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-primary transition-colors" style="">speaker</span>
+<div class="font-bold text-sm uppercase tracking-wider" style="">Smart Speaker</div>
+</div>
+<!-- Smart Sensor -->
+<div class="group bg-surface-container-lowest aspect-square rounded-xl p-8 flex flex-col items-center justify-center text-center bento-card border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-primary transition-colors" style="">sensors</span>
+<div class="font-bold text-sm uppercase tracking-wider" style="">Smart Sensor</div>
+</div>
+<!-- Smart Smoke -->
+<div class="group bg-surface-container-lowest aspect-square rounded-xl p-8 flex flex-col items-center justify-center text-center bento-card border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-primary transition-colors" style="">detector_smoke</span>
+<div class="font-bold text-sm uppercase tracking-wider" style="">Smart Smoke</div>
+</div>
+<!-- Smart Thermostat -->
+<div class="group bg-surface-container-lowest aspect-square rounded-xl p-8 flex flex-col items-center justify-center text-center bento-card border border-outline-variant/5">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-primary transition-colors" style="">thermostat</span>
+<div class="font-bold text-sm uppercase tracking-wider" style="">Smart Thermostats</div>
+</div>
+</div>
+</section>
+<!-- Ecosystem Flow -->
+<section class="max-w-[1200px] mx-auto px-12 py-32 text-center">
+<h2 class="text-4xl font-bold mb-20" style="">How It Works</h2>
+<div class="flex flex-col md:flex-row items-center justify-between gap-12 relative">
+<!-- Connection Lines (Visual Decor) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent -z-10"></div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl" style="">cloud</span>
+</div>
+<div class="font-bold" style="">Cloud Server</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant md:rotate-0 rotate-90" style="">arrow_forward</span>
+<div class="flex flex-col items-center gap-4">
+<div class="w-32 h-32 rounded-full bg-primary shadow-2xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-5xl" style="">hub</span>
+</div>
+<div class="font-bold text-primary" style="">Smart Gateway</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant md:rotate-0 rotate-90" style="">arrow_forward</span>
+<div class="flex flex-col items-center gap-4">
+<div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-4xl" style="">wifi</span>
+</div>
+<div class="font-bold" style="">Wi-Fi / Zigbee</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant md:rotate-0 rotate-90" style="">arrow_forward</span>
+<div class="flex flex-col items-center gap-4">
+<div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-4xl" style="">devices</span>
+</div>
+<div class="font-bold" style="">Your Devices</div>
+</div>
+</div>
+<p class="mt-16 text-on-surface-variant max-w-2xl mx-auto" style="">
+                Control everything via our intuitive mobile App, Voice Commands (Alexa/Siri), Physical Panels, or automated Sensors.
+            </p>
+</section>
+<!-- Lifestyle Scenarios -->
+<section class="max-w-[1440px] mx-auto px-12 py-32">
+<h2 class="text-4xl font-bold mb-16" style="">Life Orchestrated</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl bento-card">
+<img class="w-full h-full object-cover" data-alt="cozy luxury bedroom at night with warm dim lighting, smart curtains closing automatically" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNmrzJj7ZY9_Ac3BLRBNEx2gIkipAe0lMiJyQqa1fS2rLUj1v7VvTh8tv4FF7C27bsqRRMBIQrm08zXj3HMr1cteGiO2AQnUcIwHpj701fMQAlVzlOhmutM6dUmGWk0aGc94tFa1IRQra15oG1jCx6E1i45NbmvEDvkY6pdkQMhtyM6sSEDwDUO9r3qsNPHqBYyu_vOupkNodT29ulBSclk88j10Xsx-p5iTmon9SoRb9qGOPe7wRLdn1Lh7p1roSvouSgtfrKA5Y" style="">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h3 class="text-2xl font-bold" style="">Good Night</h3>
+<p class="text-sm opacity-80 mt-2" style="">One tab to lock all doors and dim light</p>
+</div>
+</div>
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl bento-card">
+<img class="w-full h-full object-cover" data-alt="exterior of a modern villa at dusk with smart security lighting and surveillance cameras" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnG2emV8jl_xfKOsfV2-DgIEiXjYdEAYuszuYsool9BuPaRRtjSZYC1ExKbS4BgSQ3kLzGQrpivBVsA8e-q_jAYfBIDMfEaDYXNtND9UkKtDFYkeiJGxJIp9lDL_47gEPdXl7_owoRb2vdUVbJs0vN24Khk3akUYSq_0KYwbdurrpaweIcccbWAKSh4VJ0CNSdGFbKluz3SBs2pAdb_8txn70yYubdMbUjcLbqDDiTOmbP4bsELqbz1gZSQq07oWht2xBvpAcamaQ" style="">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h3 class="text-2xl font-bold" style="">Vacation</h3>
+<p class="text-sm opacity-80 mt-2" style="">Simulate occupancy and monitor remotely.</p>
+</div>
+</div>
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-xl bento-card">
+<img class="w-full h-full object-cover" data-alt="home theater room with ambient blue neon accents and a large screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwnfOQjBZWiGCcnx-ujciGLmHlXdTFcQ-_WUOmPjhMyLXlBjbGr7wrtNwn8Axpp4mOIFOVOeoB3c1ujjJkappl0Dce1Otx3J4HXoqDS_f3yB1k3IxBF8OWmrh4jcixESsmkHX27cIrp2kefQfL4r6hgxiC6xCRYQwE_oQWFlpi7me3D0M-zV-mWsrJ_UUDbQFVj9F5OFT-KHbSbbaZJ00KMU2S6gQkl-3w3XHNr8zw5MJXGCb5AO_LO-PracxVyzAAo-o4U0ZvMjQ" style="">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h3 class="text-2xl font-bold" style="">Leisure Time</h3>
+<p class="text-sm opacity-80 mt-2" style="">Adjust temp and media for the perfect vibe.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- App Section -->
+<section class="max-w-[1440px] mx-auto px-12 py-32 grid lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 flex justify-center">
+<div class="w-[320px] h-[640px] bg-slate-900 rounded-[3rem] p-4 border-[8px] border-slate-800 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)]">
+<div class="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
+<div class="p-6 pt-12 space-y-6">
+<div class="flex items-center justify-between">
+<h4 class="text-xl font-bold" style="">Dashboard</h4>
+<span class="material-symbols-outlined" style="">person</span>
+</div>
+<div class="bg-primary/10 p-6 rounded-2xl">
+<div class="text-xs font-bold text-primary uppercase" style="">Welcome Home</div>
+<div class="text-lg font-bold" style="">Family Admin</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary" style="">light</span>
+<div class="text-xs font-bold mt-2" style="">Kitchen</div>
+<div class="text-[10px]" style="">Active</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<span class="material-symbols-outlined text-secondary" style="">lock</span>
+<div class="text-xs font-bold mt-2" style="">Garage</div>
+<div class="text-[10px]" style="">Secure</div>
+</div>
+</div>
+<div class="h-32 bg-gradient-to-br from-primary to-indigo-600 rounded-2xl p-4 text-white">
+<div class="text-xs" style="">Power Usage</div>
+<div class="text-2xl font-bold" style="">1.2 kW</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<h2 class="text-5xl font-bold leading-tight" style="">Unified Management For Your Whole Family</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed" style="">
+                    FEEL’S App puts complete control in your pocket. From real-time camera feeds to energy reports, manage every aspect of your Digital Sanctuary with a single touch.
+                </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4" style="">
+<span class="material-symbols-outlined text-primary" style="">check_circle</span>
+<span class="" style="">Multi-user access with customizable permissions</span>
+</li>
+<li class="flex items-center gap-4" style="">
+<span class="material-symbols-outlined text-primary" style="">check_circle</span>
+<span class="" style="">Instant push notifications for security events</span>
+</li>
+<li class="flex items-center gap-4" style="">
+<span class="material-symbols-outlined text-primary" style="">check_circle</span>
+<span class="" style="">Historical data and usage analytics</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Product Showcase -->
+<section class="max-w-[1440px] mx-auto px-12 py-32 bg-white rounded-xl">
+<h2 class="text-4xl font-bold mb-16 text-center" style="">Products</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Gateway -->
+<div class="bg-surface p-8 rounded-xl space-y-4">
+<div class="h-48 bg-white rounded-lg flex items-center justify-center shadow-inner">
+<div class="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-slate-400" style="">router</span>
+</div>
+</div>
+<h4 class="font-bold text-xl" style="">A. Core Gateway</h4>
+<p class="text-sm text-on-surface-variant" style="">The brain of your smart home, coordinating all Zigbee and Wi-Fi devices.</p>
+</div>
+<!-- Smart Panel -->
+<div class="bg-surface p-8 rounded-xl space-y-4">
+<div class="h-48 bg-white rounded-lg flex items-center justify-center shadow-inner overflow-hidden">
+<div class="w-40 h-24 bg-slate-900 rounded-md border-4 border-slate-800"></div>
+</div>
+<h4 class="font-bold text-xl" style="">B. Smart Panel</h4>
+<p class="text-sm text-on-surface-variant" style="">Vibrant touch screen for central control of scenes and lighting.</p>
+</div>
+<!-- Smart Switch -->
+<div class="bg-surface p-8 rounded-xl space-y-4">
+<div class="h-48 bg-white rounded-lg flex items-center justify-center shadow-inner">
+<div class="grid grid-cols-3 gap-2">
+<div class="w-8 h-8 bg-slate-200 rounded-sm"></div>
+<div class="w-8 h-8 bg-slate-400 rounded-sm"></div>
+<div class="w-8 h-8 bg-slate-800 rounded-sm"></div>
+</div>
+</div>
+<h4 class="font-bold text-xl" style="">C. Smart Switch</h4>
+<p class="text-sm text-on-surface-variant" style="">Available in Premium Aluminum, Tempered Glass, and PC materials.</p>
+</div>
+<!-- Security Panel -->
+<div class="bg-surface p-8 rounded-xl space-y-4">
+<div class="h-48 bg-white rounded-lg flex items-center justify-center shadow-inner">
+<div class="w-32 h-32 bg-slate-900 rounded-lg flex items-center justify-center">
+<span class="text-white text-xs font-bold" style="">7" HD Display</span>
+</div>
+</div>
+<h4 class="font-bold text-xl" style="">E. Security Hub</h4>
+<p class="text-sm text-on-surface-variant" style="">Advanced 7" and 4" panels for comprehensive security management.</p>
+</div>
+</div>
+</section>
+<!-- Clients & Portfolio -->
+<section class="max-w-[1440px] mx-auto px-12 py-32">
+<div class="flex flex-wrap justify-center gap-12 opacity-50 mb-32 grayscale">
+<span class="text-2xl font-black italic" style="">SC ASSET</span>
+<span class="text-2xl font-black italic" style="">PRE-Built</span>
+<span class="text-2xl font-black italic" style="">REAL Asset</span>
+</div>
+<h2 class="text-4xl font-bold mb-16" style="">Trusted Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="text-primary font-bold text-3xl mb-2" style="">52</div>
+<div class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Units</div>
+<h5 class="text-lg font-bold mt-4" style="">PANNANA THAWEEWATTANA</h5>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="text-secondary font-bold text-3xl mb-2" style="">117</div>
+<div class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Units</div>
+<h5 class="text-lg font-bold mt-4" style="">PIMNARA THAMMASART</h5>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="text-tertiary font-bold text-3xl mb-2" style="">90</div>
+<div class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Units</div>
+<h5 class="text-lg font-bold mt-4" style="">PIMNARA SALAYA</h5>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="text-primary-dim font-bold text-3xl mb-2" style="">250</div>
+<div class="text-sm font-bold uppercase tracking-widest text-on-surface-variant" style="">Units</div>
+<h5 class="text-lg font-bold mt-4" style="">PRE VILLAGE THAMMASART</h5>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="max-w-[1440px] mx-auto px-12 py-32">
+<div class="bg-primary rounded-xl p-16 text-on-primary flex flex-col md:flex-row justify-between items-center gap-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10 space-y-6">
+<h2 class="text-4xl md:text-5xl font-bold" style="">If You Have Questions, Please Contact Us Directly</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" style="">call</span>
+<span class="text-xl" style="">081-622-1259, 093-131-7498</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" style="">mail</span>
+<span class="text-xl" style="">feelbysivathai@gmail.com</span>
+</div>
+</div>
+</div>
+<button class="relative z-10 bg-white text-primary px-12 py-6 rounded-xl font-black text-xl hover:scale-105 transition-transform shadow-2xl" style="">Get In Touch</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-slate-50 font-manrope mt-24 border-t border-slate-100">
+<div class="max-w-[1440px] mx-auto px-12 py-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<!-- Brand & Info -->
+<div class="space-y-8">
+<div class="text-3xl font-black text-slate-900 tracking-tight" style=""><img alt="FEEL'S Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhuceRqesBVCTcfN5nFxq5zt0AAuVOLe3cLVd4UnOL_qFYEwujeKtnd_sMDsOUuwI3pK6LKghOTiDmIy1C_AWSrR0UnzW1xzjJZ5UF5GSIR_kbLLHGSSB_g8JoU1RdJGCtKo11hw77aFUfPiIkdgqIg2URE8hMA6wgQDVPPY0IxKpgvmT2osfJlDnLaPaY_ZSIZv10NiOGJGU9crVS_-9E5m8zXFfJiE5NnLsLFKw1LWHI4CSh5CEc6WLICbMlrB3vfKpjJrNgTfQ" style=""></div>
+<p class="text-on-surface-variant max-w-sm leading-relaxed" style="">
+          Creating harmony between technology and architecture since 2018. Your home, reimagined as a digital sanctuary.
+        </p>
+<div class="space-y-4">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="">call</span>
+<span class="text-sm font-medium" style="">081-622-1259, 093-131-7498</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="">mail</span>
+<span class="text-sm font-medium" style="">feelbysivathai@gmail.com</span>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<div class="space-y-8">
+<h5 class="text-lg font-bold text-slate-900" style="">Quick Links</h5>
+<ul class="flex flex-col gap-4">
+<li class="" style=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#" style="">Home</a></li>
+<li class="" style=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#" style="">Services</a></li>
+<li class="" style=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#" style="">Products</a></li>
+<li class="" style=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#" style="">Portfolio</a></li>
+<li class="" style=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#" style="">Contact</a></li>
+</ul>
+</div>
+<!-- Socials & App -->
+<div class="space-y-8">
+<h5 class="text-lg font-bold text-slate-900" style="">Connect</h5>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all" href="#" style="">Facebook</a>
+<a class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all" href="#" style="">Line</a>
+<a class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all" href="#" style="">IG</a>
+</div>
+<button class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold w-full hover:bg-slate-800 transition-all" style="">Download Mobile App</button>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-sm text-on-surface-variant">
+<div class="" style="">© 2026 FEEL’s Smart Home. All rights reserved.</div>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#" style="">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#" style="">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
