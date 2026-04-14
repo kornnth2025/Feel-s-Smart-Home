@@ -133,15 +133,15 @@
 <img alt="FEEL'S Logo" class="h-14 w-auto object-contain" src="assets/images/logo.png">
 <span class="text-2xl font-black text-slate-900 tracking-tighter font-manrope">FEEL'S</span>
 </div>
-<nav class="hidden md:flex gap-10 items-center"><a class="text-indigo-600 font-bold border-b-2 border-indigo-600" href="index.html" style="">Home</a>
-<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="site/public/services.html" style="">Services</a>
-<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="site/public/products.html" style="">Products</a>
-<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#" style="">Portfolio</a>
-<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#" style=""><br></a></nav>
+<nav class="hidden md:flex gap-10 items-center"><a class="text-indigo-600 font-bold border-b-2 border-indigo-600" href="#" style="">Home</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#services" style="">Services</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#products" style="">Products</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#portfolio" style="">Portfolio</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-medium" href="#contact" style="">Contact</a></nav>
 <div class="flex items-center gap-6">
 <span class="material-symbols-outlined text-slate-600 cursor-pointer hover:scale-110 transition-transform" style="">notifications</span>
 <span class="material-symbols-outlined text-slate-600 cursor-pointer hover:scale-110 transition-transform" style="">settings</span>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-indigo-200" style="">Contact</button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-indigo-200" onclick="window.location.hash='#contact'" style="">Contact</button>
 </div>
 </div>
 </header>
@@ -206,7 +206,7 @@
 </div>
 </section>
 <!-- Services -->
-<section class="max-w-[1440px] mx-auto px-12 py-32">
+<section id="services" class="max-w-[1440px] mx-auto px-12 py-32">
 <div class="grid md:grid-cols-3 gap-8">
 <div class="bento-card bg-surface-container-lowest p-12 rounded-xl border border-outline-variant/10">
 <span class="material-symbols-outlined text-primary text-5xl mb-8" style="">architecture</span>
@@ -481,7 +481,7 @@
 </div>
 </section>
 <!-- Contact Section -->
-<section class="max-w-[1440px] mx-auto px-12 py-32">
+<section id="contact" class="max-w-[1440px] mx-auto px-12 py-32">
 <div class="bg-primary rounded-xl p-16 text-on-primary flex flex-col md:flex-row justify-between items-center gap-12 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
 <div class="relative z-10 space-y-6">
@@ -497,7 +497,7 @@
 </div>
 </div>
 </div>
-<button class="relative z-10 bg-white text-primary px-12 py-6 rounded-xl font-black text-xl hover:scale-105 transition-transform shadow-2xl" style="">Get In Touch</button>
+<button class="relative z-10 bg-white text-primary px-12 py-6 rounded-xl font-black text-xl hover:scale-105 transition-transform shadow-2xl" onclick="window.location.hash='#contact'" style="">Get In Touch</button>
 </div>
 </section>
 </main>
